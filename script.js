@@ -48,7 +48,7 @@
 // console.log(age);
 
 //gets set to undefined. because of hoisting the VO in the creation fase scans for variable declarations
-//and knows about the variable named age, but the varable will not get assisined a value yet.
+//and knows about the variable named age, but the varable will not get assisined a value until execution.
 
 // console.log(age);
 // var age = 24;
