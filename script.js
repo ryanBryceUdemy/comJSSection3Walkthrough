@@ -40,7 +40,17 @@
 // var retirement = function (year) {
 //   console.log(65 - (2017 - year));
 // }
-
+// console.log(age);
+// var age = 25;
+// function foo() {
+//   var age = 65;
+//   console.log(age);
+// }
+// console.log(window);
+//
+// function foobar() {
+//   foo()
+// }
 //hoisting with variables
 
 //follows what you would expect to happen
@@ -67,26 +77,28 @@
 
 // First scoping example
 
-/*
-var a = 'Hello!';
-first();
+// console.log(first);
+// var a = 'Hello!';
+// first();
+//
+// function first() {
+//     var b = 'Hi!';
+//     second();
+//
+//     function second() {
+//         var c = 'Hey!';
+//         //this is only allowed because of lexical scopeing.
+//         //function second has acess to both func first and the window obj variable object
+//         console.log(a + b + c);
+//     }
+// }
 
-function first() {
-    var b = 'Hi!';
-    second();
-
-    function second() {
-        var c = 'Hey!';
-        console.log(a + b + c);
-    }
-}
-*/
 
 
 
 // Example to show the differece between execution stack and scope chain
 
-/*
+
 var a = 'Hello!';
 first();
 
@@ -96,15 +108,22 @@ function first() {
 
     function second() {
         var c = 'Hey!';
+        //this call works because of lexical scopeing. it has acess to the third function
+        //because of lexical scopeing on the scope chain.
         third()
     }
 }
 
 function third() {
     var d = 'John';
-    console.log(a + b + c + d);
+    //the console log below wont work because of lexical scoping, its still in the window context obj.
+    //beecause of scope it can not go into a function and access the function's variables. because they or stored in
+    //a different context obj which has its own scope. however, we could return both variables and access them that way.
+    // console.log(a + b + c + d);
+    console.log(a, d);
+
 }
-*/
+
 
 
 
